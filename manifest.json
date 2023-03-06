@@ -1,0 +1,64 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "name": "WA Biz Free Bulk Sender",
+    "version": "2.0.18",
+    "short_name":"WA Biz Free Bulk Sender",
+    "description": "Web Bulk Sender web - Send Messages, Attachments, Personalized Message, Smart auto replies and more.",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "wabizbackground.js"
+        ],
+        "persistent": true
+    },
+    "permissions": [
+        "tabs",
+        "*://web.whatsapp.com/*",
+        "https://www.wabiz.in/*",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "wabizcontent.js"
+            ],
+            "matches": [
+                "*://web.whatsapp.com/*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        "img/emojis/angry.gif",
+        "img/emojis/care.gif",
+        "img/emojis/haha.gif",
+        "img/emojis/like.gif",
+        "img/emojis/love.gif",
+        "img/emojis/sad.gif",
+        "img/emojis/wow.gif",
+        "js/mainlib.js",
+        "css/mainlib.css",
+        "css/tiptop.css",
+        "locales/en.json",
+        "locales/countries.json"
+    ],
+    "browser_action": {
+        "default_popup": "wabizpopup.html",
+        "default_title": "WA Biz Free WhatsApp Bulk Sender",
+        "default_icon": {
+            "16":"img/main-icon.png",
+            "22":"img/main-icon.png",
+            "32":"img/main-icon.png",
+            "48":"img/main-icon.png",
+            "128":"img/main-icon.png"
+        }
+    },
+    "icons": {
+        "16":"img/main-icon.png",
+        "22":"img/main-icon.png",
+        "32":"img/main-icon.png",
+        "48":"img/main-icon.png",
+        "128":"img/main-icon.png"
+    }
+}
